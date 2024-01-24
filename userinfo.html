@@ -1,0 +1,21 @@
+<?php
+$conn = mysqli_connect("localhost","root","","youtube") or die("connection failed");
+
+$username = $_POST["username"];
+$email = $_POST["email"];
+$mobile = $_POST["mobile"];
+$comment = $_POST["comment"];
+
+$sql = "INSERT INTO `youtube1`( `username`, `email`, `mobile`, `comment`) VALUES ('$username','$email','$mobile','$comment')";
+$result=mysqli_query($conn,$sql);
+if($result){
+    header("location:index.php");
+}
+else{
+    echo "cant saved form data";
+}
+
+
+?>
+
+    
